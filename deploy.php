@@ -13,7 +13,7 @@ $dotenv = new Dotenv();
 $dotenv->loadEnv(__DIR__.'/.env');
 
 // Le nom de votre projet
-set('application', 'tuto-deployer'); /***** A COMPLETER *****/
+set('application', 'tuto-deployer');
 
 // Hosts
 host($_ENV['DEPLOYER_REPO_HOST'])
@@ -31,9 +31,10 @@ set('bin_dir', 'bin');
 
 set('clear_paths', ['var/cache']);
 
-add('shared_files', ['.env.local']); // vous pouvez ajouter des fichiers partagés et surcharger la recette de base
+add('shared_files', []); // vous pouvez ajouter des fichiers partagés et surcharger la recette de base
 add('shared_dirs', []); // vous pouvez ajouter des dossiers partagés et surcharger la recette de base
 
+// vous pouvez surcharger la recette de base en réécrivant la fonction
 task('deploy:vendors', function () {
     if (!commandExist('unzip')) {
         writeln('<comment>To speed up composer installation setup "unzip" command with PHP zip extension https://goo.gl/sxzFcD</comment>');
