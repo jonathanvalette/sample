@@ -10,7 +10,7 @@ require_once __DIR__.'/vendor/autoload.php';
 require 'recipe/symfony.php';
 
 $dotenv = new Dotenv();
-$dotenv->loadEnv(__DIR__.'/.env.local');
+$dotenv->loadEnv(__DIR__.'/.env');
 
 // Le nom de votre projet
 set('application', 'tuto-deployer'); /***** A COMPLETER *****/
