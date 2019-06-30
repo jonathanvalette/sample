@@ -31,7 +31,8 @@ set('bin_dir', 'bin');
 
 set('clear_paths', ['var/cache']);
 
-add('shared_files', ['.env.local']);
+add('shared_files', ['.env.local']); // vous pouvez ajouter des fichiers partagés et surcharger la recette de base
+add('shared_dirs', []); // vous pouvez ajouter des dossiers partagés et surcharger la recette de base
 
 task('deploy:vendors', function () {
     if (!commandExist('unzip')) {
